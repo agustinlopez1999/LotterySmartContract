@@ -11,6 +11,51 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "buyingTokens",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "event_ticket_purchased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "event_ticket_winner",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "availableTokens",
 				"outputs": [
@@ -21,6 +66,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tickets",
+						"type": "uint256"
+					}
+				],
+				"name": "buyTicket",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -100,6 +158,19 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ticket_price",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -146,11 +217,11 @@
 			]
 		},
 		"Lottery/lottery.sol": {
-			"keccak256": "0xaa2c56281fa2d97fa595782c5a1ec6c9a44c33fb3054b2ac18814e090d285a5f",
+			"keccak256": "0x2dddf99502e84c099dbe4cfa9098045cf33ca437f3450c07721cb57fd68702a0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://10285052906f46166e75d66f71c7978ce5f39dd3fb0d6c60d7b6e9ee3ad75157",
-				"dweb:/ipfs/Qmaq7K8GabJR688SPRKQySRyEi6h5TbZPdAziW1uJuFJRK"
+				"bzz-raw://ea14b43ae49602d3317d1f634410d280e5f4de826baf61ed58c4177d26f17e11",
+				"dweb:/ipfs/QmfT3vPExTXTQP2E3ErhPhAwg18hJe6VscqGKChHibR6fi"
 			]
 		}
 	},
