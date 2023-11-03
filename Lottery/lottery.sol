@@ -84,16 +84,16 @@ contract lottery{
     //Function to buy lottery tickets
     function buyTicket(uint _tickets) public{
         uint cost = ticket_price*_tickets;
-        require(cost <= myTokensBalance());
+        require(cost <= myTokensBalance(),"Insufficient balance");
         token.transferFrom(msg.sender,owner,cost);
         for(uint i=0; i<_tickets; i++){
             uint random = uint(keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) % 10000; //value between [0 - 9999]
             randNonce++;
             id_address_ticket[msg.sender].push(random);
+            buyed_tickets.push(random);
             random_number_address[random] = msg.sender;
             emit event_ticket_purchased(random,msg.sender);
         }
     }
-
 
 }

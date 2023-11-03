@@ -65,14 +65,12 @@ contract ERC20Basic is IERC20{
         return true;
     }
 
-    function transferFrom(address _owner, address _buyer, uint256 _numTokens) public override returns (bool){
+    function transferFrom(address _owner, address _receiver, uint256 _numTokens) public override returns (bool){
         require(_numTokens <= balances[_owner]);
-        require(_numTokens <= allowed[_owner][msg.sender]);
         balances[_owner] = balances[_owner].sub(_numTokens);
-        allowed[_owner][msg.sender] = allowed[_owner][msg.sender].sub(_numTokens);
-        balances[_buyer] = balances[_buyer].add(_numTokens);
-        emit Transfer(_owner,_buyer,_numTokens);
-        return false;
+        balances[_receiver] = balances[_receiver].add(_numTokens);
+        emit Transfer(_owner,_receiver,_numTokens);
+        return true;
     }
 
     //only owner functions
