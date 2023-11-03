@@ -79,7 +79,7 @@ contract lottery{
     uint [] buyed_tickets;
     //Events
     event event_ticket_purchased(uint,address);
-    event event_ticket_winner(uint,address);
+    event event_ticket_winner(uint);
 
     //Function to buy lottery tickets
     function buyTicket(uint _tickets) public{
@@ -96,4 +96,20 @@ contract lottery{
         }
     }
 
-}
+    //Return Tickets array
+    function yourTickets() public view returns (uint[] memory){
+        return id_address_ticket[msg.sender];
+    }
+
+    //Get Winner
+    function getWinner() public onlyOwner(){
+        require(buyed_tickets.length > 0);
+        uint arrayLenght = buyed_tickets.length;
+        uint array_pos = uint (uint(keccak256(abi.encodePacked(block.timestamp))) % arrayLenght);
+        uint winner = buyed_tickets[array_pos];
+        emit event_ticket_winner(winner);
+        address winnerAddress = random_number_address[winner];
+        token.transferFrom(msg.sender, winnerAddress, poolPrize());
+    }
+
+}   
