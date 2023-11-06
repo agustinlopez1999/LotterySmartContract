@@ -37,6 +37,12 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"name": "event_ticket_purchased",
@@ -53,6 +59,25 @@
 					}
 				],
 				"name": "event_ticket_winner",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "event_token_exchange",
 				"type": "event"
 			},
 			{
@@ -105,6 +130,26 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "exchangeTokens",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getWinner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -171,6 +216,19 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "yourTickets",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -201,11 +259,11 @@
 	},
 	"sources": {
 		"Lottery/ERC20.sol": {
-			"keccak256": "0x38194bd5483acb206ef6fb716b7f0ae1fa6d93f6602e4c8edf248c563df034de",
+			"keccak256": "0xc8fb106084e039086418dfd998c501319f8c97e70e043257c66b8192cd491b7f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://dc919aa5f61088493d576f9e30cdc6b629a4308b774a45d48f308adbff4b9598",
-				"dweb:/ipfs/QmbcskWP2CDgRoAUGfv7RVrb7XSMj8oyaYtKX6rfkwqUTv"
+				"bzz-raw://f769db7e08bfa02d5505bd401d37ac5fc954bc286347321645d889eef0103daa",
+				"dweb:/ipfs/Qmc1Uv45eebVGJZNgJPKfG9uur5ctCpzeEbCaUwn7CdgcD"
 			]
 		},
 		"Lottery/SafeMath.sol": {
@@ -217,11 +275,11 @@
 			]
 		},
 		"Lottery/lottery.sol": {
-			"keccak256": "0x2dddf99502e84c099dbe4cfa9098045cf33ca437f3450c07721cb57fd68702a0",
+			"keccak256": "0xaa2d3d8cfd8f5c3026b200a42a7509c47c5a9a2e5bd3e7e216b7df10d5c2af88",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ea14b43ae49602d3317d1f634410d280e5f4de826baf61ed58c4177d26f17e11",
-				"dweb:/ipfs/QmfT3vPExTXTQP2E3ErhPhAwg18hJe6VscqGKChHibR6fi"
+				"bzz-raw://880be1ee5e6e6362dcb23d3467892a747428718bad2c432b709e556ab25b1089",
+				"dweb:/ipfs/QmZG15XwDLxtUW9BUGoYfgwrtXaaoRjGY7CSTRsVxAg2ov"
 			]
 		}
 	},
